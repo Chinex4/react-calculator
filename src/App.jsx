@@ -23,6 +23,12 @@ function App() {
     if (expression === '') {
       return expression
     }
+    // if (expression.includes('+', 0) || expression.includes('-', 0) || expression.includes('*', 0) || expression.includes('/', 0)) {
+    //   return expression
+    // }
+    if (expression.includes(operator)) {
+      return expression
+    }
     setExpression(prevOperator => prevOperator + operator)
   }
   const clear = () => {
@@ -49,26 +55,26 @@ function App() {
 
           <div className='w-full grid grid-cols-4 grid-row-4 gap-4 h-[400px]'>
             <ClearButton onclick={clear} clearkey='C' />
-            <OperationButton onclick={chooseOperation} operator='/'/>
-            <OperationButton onclick={chooseOperation} operator='*'/>
+            <OperationButton onclick={chooseOperation} operator='/' />
+            <OperationButton onclick={chooseOperation} operator='*' />
             <DeleteButton onclick={deleteValue} operator='DEL' />
 
-            <DigitButton onclick={addDigit} digit='7'/>
-            <DigitButton onclick={addDigit} digit='8'/>
-            <DigitButton onclick={addDigit} digit='9'/>
-            <OperationButton onclick={chooseOperation} operator='-'/>
+            <DigitButton onclick={addDigit} digit='7' />
+            <DigitButton onclick={addDigit} digit='8' />
+            <DigitButton onclick={addDigit} digit='9' />
+            <OperationButton onclick={chooseOperation} operator='-' />
 
-            <DigitButton onclick={addDigit} digit='4'/>
-            <DigitButton onclick={addDigit} digit='5'/>
-            <DigitButton onclick={addDigit} digit='6'/>
-            <OperationButton onclick={chooseOperation} operator='+'/>
+            <DigitButton onclick={addDigit} digit='4' />
+            <DigitButton onclick={addDigit} digit='5' />
+            <DigitButton onclick={addDigit} digit='6' />
+            <OperationButton onclick={chooseOperation} operator='+' />
 
-            <DigitButton onclick={addDigit} digit='1'/>
-            <DigitButton onclick={addDigit} digit='2'/>
-            <DigitButton onclick={addDigit} digit='3'/>
+            <DigitButton onclick={addDigit} digit='1' />
+            <DigitButton onclick={addDigit} digit='2' />
+            <DigitButton onclick={addDigit} digit='3' />
             <EqualButton onclick={evaluate} equalsign='=' />
 
-            <ZeroButton onclick={addDigit} zerokey='0'/>
+            <ZeroButton onclick={addDigit} zerokey='0' />
             <DigitButton onclick={addDigit} digit='.' />
           </div>
         </div>
